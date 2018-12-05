@@ -1,0 +1,28 @@
+apiVersion: v1
+entries:
+  helm-project:
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: 2018-12-05T13:44:46.242475608+05:30
+    description: Kuberenetes project for Employee information management
+    digest: 86f8747a9e3b0127a99f0c618e170637f47e173a6f1213355d5622dfb0bffb12
+    engine: gotpl
+    home: http://10.136.60.246:32456
+    keywords:
+    - Docker
+    - Docker-compose
+    - Kubernetes
+    - Helm
+    kubeVersion: <=13.0.0
+    maintainers:
+    - email: sagarutekar2366@gmail.com
+      name: Sagar Utekar
+      url: https://github.com/Sagar2366
+    name: helm-project
+    sources:
+    - https://github.com/Sagar2366/helm-chart
+    tillerVersion: '>2.0.0'
+    urls:
+    - https://github.com/Sagar2366/helm-poc/helm-project-0.1.1.tgz
+    version: 0.1.1
+generated: 2018-12-05T13:44:46.241280821+05:30
