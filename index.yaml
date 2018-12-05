@@ -3,7 +3,7 @@ entries:
   helm-project:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2018-12-05T13:54:48.061216264+05:30
+    created: 2018-12-05T14:00:10.843679467+05:30
     description: Kuberenetes project for Employee information management
     digest: 9ab8c5f0ebd0415dddd45db17a3b9c1632fb1f926f16ffac292e3ec5d9592dae
     engine: gotpl
@@ -23,6 +23,6 @@ entries:
     - https://github.com/Sagar2366/helm-chart
     tillerVersion: '>2.0.0'
     urls:
-    - https://github.com/Sagar2366/helm-poc/helm-project-0.1.1.tgz
+    - https://sagar2366.github.io/helm-poc/helm-project-0.1.1.tgz
     version: 0.1.1
-generated: 2018-12-05T13:54:48.059526643+05:30
+generated: 2018-12-05T14:00:10.842692641+05:30
