@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+
+kind: Deployment
+
+metadata:
+
+  name: my-emp
+
+spec:
+
+  replicas: {{ .Values.global.replicacount }}
+
+  template:
+
+    metadata:
+
+      labels:
+
+        run: my-emp
+
+    spec:
+
+      containers:
+
+      - name: my-emp
+
+        image:  {{ .Values.frontendimage}}
+
+        ports:
+
+        - containerPort: {{ .Values.frontendport}}
+

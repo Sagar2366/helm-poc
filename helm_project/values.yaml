@@ -1,0 +1,17 @@
+# Default values for helm_project 
+# Declare here variables to be passed to templates.
+
+service:
+  port: 80
+  targetPort: 5066
+
+global:
+  type: NodePort
+#  tag: latest
+image:
+  repository: 10.136.60.12:5000/contacts_app2
+
+nameOverride: ""
+fullnameOverride: ""
+
+

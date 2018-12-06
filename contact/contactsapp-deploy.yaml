@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contacts-app1
+  labels:
+    app: contacts-app1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: contacts-app1
+  template:
+    metadata:
+      labels:
+        app: contacts-app1
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - image: 10.136.60.12:5000/contacts_app1
+        name: contacts-app1
+        ports:
+        - name: http-server
+          containerPort: 5066

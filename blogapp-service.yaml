@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-app
+  labels:
+    app: blog-app
+spec:
+  ports:
+    - port: 80
+      targetPort: 3030
+  selector:
+    app: blog-app
+  type: NodePort

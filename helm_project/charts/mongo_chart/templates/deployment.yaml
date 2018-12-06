@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mongo_chart.fullname" . }}
+  labels:
+    #app: mongo1
+    app.kubernetes.io/name: {{ include "mongo_chart.name" . }}
+    helm.sh/chart: {{ include "mongo_chart.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      #app: mongo1
+      app.kubernetes.io/name: {{ include "mongo_chart.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        #app: mongo1
+        app.kubernetes.io/name: {{ include "mongo_chart.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.global.tag }}"
+        name: {{ .Chart.Name }}
+
+        ports:
+        - name: mongo1
+          containerPort: 27017
+

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-app
+  labels:
+    app: blog-app
+spec:
+  replicas: {{ .Values.global.relicaCount}}
+  selector:
+    matchLabels:
+      app: blog-app
+  template:
+    metadata:
+      labels:
+        app: blog-app
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}
+        name: blog-app
+        ports:
+        - name: http-server
+          containerPort: {{ .Values.service.port}}
+

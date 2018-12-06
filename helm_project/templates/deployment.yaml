@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "helm_project.fullname" . }}
+  labels:
+    #app: contacts-app2
+    app.kubernetes.io/name: {{ include "helm_project.name" . }}
+    helm.sh/chart: {{ include "helm_project.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+
+spec:
+  replicas: {{ .Values.global.replicaCount }}
+  selector:
+    matchLabels:
+      #app: contacts-app2
+      app.kubernetes.io/name: {{ include "helm_project.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+
+  template:
+    metadata:
+      labels:
+        #app: contacts-app2
+        app.kubernetes.io/name: {{ include "helm_project.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.global.tag }}"
+        name: {{ .Chart.Name }}
+        ports:
+        - name: http-server
+          containerPort: 5066
+

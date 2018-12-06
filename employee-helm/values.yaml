@@ -1,0 +1,7 @@
+frontendimage: nameduttu/employee
+frontendport: 8889
+global:
+  replicacount: 1
+  type: NodePort
+service:
+  port: 80

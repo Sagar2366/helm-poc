@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "helm_project.fullname" . }}
+  labels:
+    app: c
+spec:
+  ports:
+    - port: 80
+      targetPort: 5066
+  selector:
+    app: contacts-app1
+  type: NodePort
+

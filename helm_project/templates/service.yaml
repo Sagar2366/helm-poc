@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "helm_project.fullname" . }}
+  labels:
+    #app: contacts-app1
+    app.kubernetes.io/name: {{ include "helm_project.name" . }}
+    helm.sh/chart: {{ include "helm_project.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+
+spec:
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort}}
+  selector:
+    #app: contacts-app1
+    app.kubernetes.io/name: {{ include "helm_project.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+
+  type: {{ .Values.global.type }}
+

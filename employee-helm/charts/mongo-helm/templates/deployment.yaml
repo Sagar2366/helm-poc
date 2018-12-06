@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: mongo
+
+  labels:
+
+    app: nginx
+
+spec:
+
+  replicas: {{ .Values.global.replicacount }}
+
+  selector:
+
+    matchLabels:
+
+      run: mongo
+
+  template:
+
+    metadata:
+
+      labels:
+
+        run: mongo
+
+    spec:
+
+      containers:
+
+      - name: mongo
+
+        image: mongo
+
+        ports:
+
+        - containerPort: {{ .Values.global.mongoport}}
+

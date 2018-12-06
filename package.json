@@ -1,0 +1,17 @@
+{
+  "name": "a3-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blogapp.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "joi": "^13.4.0",
+    "mongoose": "^5.2.3"
+  },
+  "scripts": {
+    "start":"node blogapp.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

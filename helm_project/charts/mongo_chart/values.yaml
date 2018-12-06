@@ -1,0 +1,16 @@
+# Default values for mongo_chart.
+
+# Declare variables to be passed into your templates.
+
+service :
+  port : 27017
+  targetPort : 27017
+
+
+global:
+  replicaCount: 1
+  tag: latest
+  
+image:
+    repository: mongo
+    

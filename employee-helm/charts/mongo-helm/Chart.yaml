@@ -1,0 +1,25 @@
+apiVersion: v1
+appVersion: "1.0"
+description: A Helm chart for Kubernetes
+name: mongo-helm
+version: 0.1.1
+kubeVersion: "<=13.0.0"
+description: Kuberenetes project for Employee information management
+keywords:
+  - Docker
+  - Docker-compose
+  - Kubernetes
+  - Helm
+home: http://10.136.60.246:32456
+sources:
+  - https://github.com/Sagar2366/helm-chart
+maintainers:
+  - name: Sagar Utekar
+    email: sagarutekar2366@gmail.com
+    url: https://github.com/Sagar2366
+engine: gotpl
+icon:
+appVersion: 0.0.1
+deprecated: False
+tillerVersion: ">2.0.0"
+

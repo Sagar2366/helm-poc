@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo5
+  labels:
+    app.kubernetes.io/name: {{ include "mongo_chart.name" . }}
+    helm.sh/chart: {{ include "mongo_chart.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    
+spec:
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort}}
+  selector:
+    #app: contacts-app1
+    app.kubernetes.io/name: {{ include "mongo_chart.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    
+  type: {{ .Values.global.type }}
+

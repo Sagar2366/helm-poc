@@ -1,0 +1,12 @@
+# Default values for helm_project
+# Declare here variables to be passed to templates.
+
+service:
+  port: 80
+  targetPort: 5060
+
+global:
+  type: NodePort
+
+image:
+  repository: nameduttu/phonebook
